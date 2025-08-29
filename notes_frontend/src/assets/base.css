@@ -1,0 +1,152 @@
+:root {
+  /* Brand colors (as requested) */
+  --color-primary: #3b82f6;  /* blue-500 */
+  --color-secondary: #6b7280; /* gray-500 */
+  --color-accent: #22d3ee; /* cyan-400 */
+
+  /* Light surface */
+  --surface-0: #ffffff;
+  --surface-1: #f8fafc; /* slate-50 */
+  --surface-2: #f1f5f9; /* slate-100 */
+
+  /* Text colors */
+  --text-0: #0f172a; /* slate-900 */
+  --text-1: #334155; /* slate-700 */
+  --text-muted: #6b7280; /* gray-500 */
+
+  /* Borders */
+  --border: #e5e7eb; /* gray-200 */
+  --border-strong: #d1d5db; /* gray-300 */
+
+  /* Shadows / radii */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  /* Layout */
+  --sidebar-w: 300px;
+  --container-max: 1400px;
+
+  /* Transitions */
+  --transition: 180ms ease;
+
+  /* Legacy vars (kept for compatibility) */
+  --color-background: var(--surface-0);
+  --color-background-soft: var(--surface-1);
+  --color-background-mute: var(--surface-2);
+  --color-border: var(--border);
+  --color-border-hover: var(--border-strong);
+  --color-heading: var(--text-0);
+  --color-text: var(--text-1);
+  --section-gap: 160px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html, body, #app {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--text-1);
+  background: var(--surface-1);
+  transition: color var(--transition), background-color var(--transition);
+  line-height: 1.55;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
+    Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Utility classes */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--border);
+  color: white;
+  background: var(--color-primary);
+  border-radius: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+  box-shadow: 0 1px 2px rgba(2, 6, 23, 0.06), 0 1px 3px rgba(2, 6, 23, 0.1);
+}
+.btn.secondary {
+  background: var(--color-secondary);
+}
+.btn.ghost {
+  color: var(--text-1);
+  background: transparent;
+  border-color: var(--border);
+}
+.btn.accent {
+  background: var(--color-accent);
+  color: #0e7490;
+}
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(2, 6, 23, 0.08);
+}
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.input, .textarea, .select {
+  width: 100%;
+  border: 1px solid var(--border);
+  background: var(--surface-0);
+  color: var(--text-1);
+  border-radius: 10px;
+  padding: 10px 12px;
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
+}
+.textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+.input:focus, .textarea:focus, .select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.card {
+  border: 1px solid var(--border);
+  background: var(--surface-0);
+  border-radius: var(--radius-md);
+  box-shadow: 0 1px 2px rgba(2, 6, 23, 0.04);
+}
+
+.hr {
+  height: 1px;
+  width: 100%;
+  background: var(--border);
+}

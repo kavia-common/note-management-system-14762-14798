@@ -1,0 +1,16 @@
+@import './base.css';
+
+#app {
+  margin: 0 auto;
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-primary);
+  transition: color var(--transition), background-color var(--transition), opacity var(--transition);
+}
+
+a:hover {
+  opacity: 0.9;
+}
